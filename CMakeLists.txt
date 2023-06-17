@@ -52,6 +52,4 @@ add_definitions(${LLVM_DEFINITIONS})
 
 add_subdirectory(include)
 add_subdirectory(lib)
-add_subdirectory(parser)
-add_subdirectory(codegen)
 add_subdirectory(calc-opt)

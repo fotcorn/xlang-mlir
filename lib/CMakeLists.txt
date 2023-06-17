@@ -1,1 +1,2 @@
-add_subdirectory(Calc)
+add_subdirectory(Dialect)
+add_subdirectory(CodeGen)
