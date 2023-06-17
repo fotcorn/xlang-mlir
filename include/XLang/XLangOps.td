@@ -1,4 +1,4 @@
-//===- CalcOps.td - Calc dialect ops -----------------------*- tablegen -*-===//
+//===- XLangOps.td - XLang dialect ops -----------------------*- tablegen -*-===//
 //
 // This file is licensed under the Apache License v2.0 with LLVM Exceptions.
 // See https://llvm.org/LICENSE.txt for license information.
@@ -6,13 +6,13 @@
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef CALC_OPS
-#define CALC_OPS
+#ifndef XLANG_OPS
+#define XLANG_OPS
 
-include "Calc/CalcDialect.td"
+include "XLang/XLangDialect.td"
 include "mlir/Interfaces/SideEffectInterfaces.td"
 
-def ConstantOp : Calc_Op<"constant",
+def ConstantOp : XLang_Op<"constant",
     [ConstantLike, Pure]> {
   let summary = "constant";
   let arguments = (ins SI64Attr:$value);
@@ -22,7 +22,7 @@ def ConstantOp : Calc_Op<"constant",
   ];
 }
 
-def AddOp : Calc_Op<"add"> {
+def AddOp : XLang_Op<"add"> {
   let summary = "add";
   let arguments = (ins SI64:$lhs, SI64:$rhs);
   let results = (outs SI64);
@@ -31,7 +31,7 @@ def AddOp : Calc_Op<"add"> {
   ];
 }
 
-def SubOp : Calc_Op<"sub"> {
+def SubOp : XLang_Op<"sub"> {
   let summary = "sub";
   let arguments = (ins SI64:$lhs, SI64:$rhs);
   let results = (outs SI64);
@@ -40,7 +40,7 @@ def SubOp : Calc_Op<"sub"> {
   ];
 }
 
-def MulOp : Calc_Op<"mul"> {
+def MulOp : XLang_Op<"mul"> {
   let summary = "mul";
   let arguments = (ins SI64:$lhs, SI64:$rhs);
   let results = (outs SI64);
@@ -49,7 +49,7 @@ def MulOp : Calc_Op<"mul"> {
   ];
 }
 
-def DivOp : Calc_Op<"div"> {
+def DivOp : XLang_Op<"div"> {
   let summary = "div";
   let arguments = (ins SI64:$lhs, SI64:$rhs);
   let results = (outs SI64);
@@ -58,7 +58,7 @@ def DivOp : Calc_Op<"div"> {
   ];
 }
 
-def GetVariableOp : Calc_Op<"getVar"> {
+def GetVariableOp : XLang_Op<"getVar"> {
   let summary = "getVar";
   let arguments = (ins StrAttr:$varName);
   let results = (outs SI64);
@@ -67,14 +67,14 @@ def GetVariableOp : Calc_Op<"getVar"> {
   ];
 }
 
-def SetVariableOp : Calc_Op<"setVar"> {
+def SetVariableOp : XLang_Op<"setVar"> {
   let summary = "setVar";
   let arguments = (ins StrAttr:$varName, SI64:$value);
 }
 
-def PrintOp : Calc_Op<"print"> {
+def PrintOp : XLang_Op<"print"> {
   let summary = "print";
   let arguments = (ins SI64:$value);
 }
 
-#endif // CALC_OPS
+#endif // XLANG_OPS

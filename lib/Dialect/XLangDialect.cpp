@@ -1,4 +1,4 @@
-//===- CalcDialect.cpp - Calc dialect ---------------------------*- C++ -*-===//
+//===- XLangDialect.cpp - XLang dialect ---------------------------*- C++ -*-===//
 //
 // This file is licensed under the Apache License v2.0 with LLVM Exceptions.
 // See https://llvm.org/LICENSE.txt for license information.
@@ -6,21 +6,21 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include "Calc/CalcDialect.h"
-#include "Calc/CalcOps.h"
+#include "XLang/XLangDialect.h"
+#include "XLang/XLangOps.h"
 
 using namespace mlir;
-using namespace calc;
+using namespace xlang;
 
-#include "Calc/CalcOpsDialect.cpp.inc"
+#include "XLang/XLangOpsDialect.cpp.inc"
 
 //===----------------------------------------------------------------------===//
-// Calc dialect.
+// XLang dialect.
 //===----------------------------------------------------------------------===//
 
-void CalcDialect::initialize() {
+void XLangDialect::initialize() {
   addOperations<
 #define GET_OP_LIST
-#include "Calc/CalcOps.cpp.inc"
+#include "XLang/XLangOps.cpp.inc"
       >();
 }

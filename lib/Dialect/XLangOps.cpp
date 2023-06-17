@@ -1,4 +1,4 @@
-//===- CalcOps.cpp - Calc dialect ops ---------------------------*- C++ -*-===//
+//===- XLangOps.cpp - XLang dialect ops ---------------------------*- C++ -*-===//
 //
 // This file is licensed under the Apache License v2.0 with LLVM Exceptions.
 // See https://llvm.org/LICENSE.txt for license information.
@@ -6,14 +6,14 @@
 //
 //===----------------------------------------------------------------------===//
 
-#include "Calc/CalcOps.h"
-#include "Calc/CalcDialect.h"
+#include "XLang/XLangOps.h"
+#include "XLang/XLangDialect.h"
 #include "mlir/IR/OpImplementation.h"
 
 #define GET_OP_CLASSES
-#include "Calc/CalcOps.cpp.inc"
+#include "XLang/XLangOps.cpp.inc"
 
-namespace calc {
+namespace xlang {
 void ConstantOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,
                        int64_t value) {
   auto dataType = builder.getIntegerType(64, true);
@@ -53,4 +53,4 @@ void DivOp::build(mlir::OpBuilder &builder, mlir::OperationState &state,
   state.addOperands({lhs, rhs});
 }
 
-} // namespace calc
+} // namespace xlang

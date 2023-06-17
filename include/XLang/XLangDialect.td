@@ -1,4 +1,4 @@
-//===- CalcDialect.td - Calc dialect -----------------------*- tablegen -*-===//
+//===- XLangDialect.td - XLang dialect -----------------------*- tablegen -*-===//
 //
 // This file is licensed under the Apache License v2.0 with LLVM Exceptions.
 // See https://llvm.org/LICENSE.txt for license information.
@@ -6,27 +6,27 @@
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef CALC_DIALECT
-#define CALC_DIALECT
+#ifndef XLANG_DIALECT
+#define XLANG_DIALECT
 
 include "mlir/IR/OpBase.td"
 include "mlir/Interfaces/SideEffectInterfaces.td"
 
 //===----------------------------------------------------------------------===//
-// Calc dialect definition.
+// XLang dialect definition.
 //===----------------------------------------------------------------------===//
 
-def Calc_Dialect : Dialect {
-    let name = "calc";
-    let summary = "A calc out-of-tree MLIR dialect.";
-    let cppNamespace = "::calc";
+def XLang_Dialect : Dialect {
+    let name = "xlang";
+    let summary = "A xlang out-of-tree MLIR dialect.";
+    let cppNamespace = "::xlang";
 }
 
 //===----------------------------------------------------------------------===//
-// Base calc operation definition.
+// Base xlang operation definition.
 //===----------------------------------------------------------------------===//
 
-class Calc_Op<string mnemonic, list<Trait> traits = []> :
-        Op<Calc_Dialect, mnemonic, traits>;
+class XLang_Op<string mnemonic, list<Trait> traits = []> :
+        Op<XLang_Dialect, mnemonic, traits>;
 
-#endif // CALC_DIALECT
+#endif // XLANG_DIALECT

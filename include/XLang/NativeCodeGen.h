@@ -1,5 +1,5 @@
-#ifndef CALC_NATIVECODEGEN_H
-#define CALC_NATIVECODEGEN_H
+#ifndef XLANG_NATIVECODEGEN_H
+#define XLANG_NATIVECODEGEN_H
 
 #include <memory>
 #include <string>
@@ -12,8 +12,8 @@ class ModuleOp;
 class MLIRContext;
 } // namespace mlir
 
-namespace calc {
+namespace xlang {
 llvm::Error generateNativeBinary(mlir::ModuleOp &Module,
                                  llvm::StringRef FilePath);
-} // namespace calc
-#endif // CALC_NATIVECODEGEN_H
+} // namespace xlang
+#endif // XLANG_NATIVECODEGEN_H

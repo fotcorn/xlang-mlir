@@ -1,3 +1,3 @@
-add_mlir_library(CalcCodeGen
+add_mlir_library(XLangCodeGen
   NativeCodeGen.cpp
 )

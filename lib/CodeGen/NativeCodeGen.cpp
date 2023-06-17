@@ -1,4 +1,4 @@
-#include "Calc/NativeCodeGen.h"
+#include "XLang/NativeCodeGen.h"
 
 #include "mlir/Conversion/ArithToLLVM/ArithToLLVM.h"
 #include "mlir/Conversion/FuncToLLVM/ConvertFuncToLLVM.h"
@@ -23,7 +23,7 @@
 #include "llvm/Target/TargetMachine.h"
 #include "llvm/TargetParser/Host.h"
 
-llvm::Error calc::generateNativeBinary(mlir::ModuleOp &module,
+llvm::Error xlang::generateNativeBinary(mlir::ModuleOp &module,
                                        llvm::StringRef filePath) {
   mlir::MLIRContext *context = module.getContext();
 

@@ -1,4 +1,4 @@
-//===- CalcOps.h - Calc dialect ops -----------------------------*- C++ -*-===//
+//===- XLangOps.h - XLang dialect ops -----------------------------*- C++ -*-===//
 //
 // This file is licensed under the Apache License v2.0 with LLVM Exceptions.
 // See https://llvm.org/LICENSE.txt for license information.
@@ -6,8 +6,8 @@
 //
 //===----------------------------------------------------------------------===//
 
-#ifndef CALC_CALCOPS_H
-#define CALC_CALCOPS_H
+#ifndef XLANG_XLANGOPS_H
+#define XLANG_XLANGOPS_H
 
 #include "mlir/IR/BuiltinTypes.h"
 #include "mlir/IR/Dialect.h"
@@ -16,6 +16,6 @@
 #include "mlir/Interfaces/SideEffectInterfaces.h"
 
 #define GET_OP_CLASSES
-#include "Calc/CalcOps.h.inc"
+#include "XLang/XLangOps.h.inc"
 
-#endif // CALC_CALCOPS_H
+#endif // XLANG_XLANGOPS_H
